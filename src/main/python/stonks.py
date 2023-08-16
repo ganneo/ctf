@@ -10,13 +10,13 @@ for section in encoded_flag.split('(nil)'):
 
         hex_string.append(token)
 
-# hex_string.reverse()
-flag = []
+flag = ''
 
 for token in hex_string:
     byte_arr = bytes.fromhex(token)
     byte_arr = byte_arr[::-1]
     for character in byte_arr:
-        flag.append(chr(character))
+        flag += chr(character)
 
-print(''.join(flag))
+
+print(flag)
